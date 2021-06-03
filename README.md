@@ -1,6 +1,6 @@
 # Calculator-with-jQuery
 
-![](screenshot1.png)
+![](screenshot-1.png)
 
 
 
