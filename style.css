@@ -112,8 +112,3 @@ body{
 .operator:hover{
     background-color: rgb(221, 137, 137);
 }
-h3{
-    font-family: playball;
-    text-align: center;
-    font-size: 30px;
-}
