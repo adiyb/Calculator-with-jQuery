@@ -19,7 +19,7 @@ body{
 }
 .calculator{
     width: 400px;
-    background: linear-gradient(328deg , rgb(36 36 36) 0%, rgb(91 91 92) 30%, rgb(148 148 148) 100%);
+    background: linear-gradient(328deg , #121a29 0%, #182236 30%, #253f74 60%, #2e4470 100%);
     padding: 20px;
     border-radius: 20px;
     box-shadow: 5px 7px 3px 0  rgb(105, 105, 105),
@@ -101,14 +101,14 @@ body{
     box-shadow: 0 0 ;
 }
 .number{
-    background-color: rgb(230, 164, 79);
+    background-color: #47597e;
 }
 .number:hover{
-    background-color:rgb(190, 136, 65) ;
+    background-color:#33405a ;
 }
 .operator{
-    background-color: rgb(255, 159, 159);
+    background-color: #dbe6fd;
 }
 .operator:hover{
-    background-color: rgb(221, 137, 137);
+    background-color: #929aac;
 }
