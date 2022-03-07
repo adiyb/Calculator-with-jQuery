@@ -90,14 +90,14 @@ $(function () {
     equal.on("click", function () {
         let data2 = Number(screen.text());
         if (lastOperation === "plus") {
-            screen.text(Number((memory + data2).toPrecision(3)));
+            screen.text(Number((memory + data2).toPrecision(15)));
         } else if (lastOperation === "minus") {
-            screen.text(Number((memory - data2).toPrecision(3)));
+            screen.text(Number((memory - data2).toPrecision(15)));
         } else if (lastOperation === "divide") {
-            screen.text(Number((memory / data2).toPrecision(3)));
+            screen.text(Number((memory / data2).toPrecision(15)));
         } else if (lastOperation === "multiply") {
             if (String(memory * data2).length < 15) {
-                screen.text(Number((memory * data2).toPrecision(3)));
+                screen.text(Number((memory * data2).toPrecision(15)));
             } else {
                 screen.text("Error");
             }
