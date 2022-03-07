@@ -1,11 +1,4 @@
 $(function () {
-    /* ******** Brand neon light ************* */
-    let light = $(".light");
-    setInterval(function () {
-        light.toggleClass("neon");
-    }, 1000);
-
-    /* ************ Calculator ***************************** */
     let screen = $(".screen p");
     let buttons = $(".number");
     let plus = $("#plus");
@@ -22,7 +15,7 @@ $(function () {
 
     buttons.on("click", function (event) {
         let data = screen.text();
-        if (data.length < 13) {
+        if (data.length < 15) {
             if (event.target.dataset.value === ".") {
                 if (!data.includes(".")) {
                     screen.text((data += event.target.dataset.value));
@@ -68,6 +61,7 @@ $(function () {
         lastOperation = "";
         screen.text(0);
     });
+
     backSpace.on("click", function () {
         memory = screen.text();
         backed = memory.substring(0, memory.length - 1);
@@ -77,14 +71,16 @@ $(function () {
             screen.text(backed);
         }
     });
+
     root.on("click", function () {
         memory = Number(screen.text());
-        screen.text(Number(Math.sqrt(memory).toFixed(6)));
+        screen.text(Number(Math.sqrt(memory).toFixed(3)));
     });
+
     power.on("click", function () {
         memory = Number(screen.text());
         let powered = String(memory ** 2);
-        if (powered.length < 12) {
+        if (powered.length < 15) {
             screen.text(powered);
         } else {
             screen.text("    Error    ");
@@ -94,13 +90,17 @@ $(function () {
     equal.on("click", function () {
         let data2 = Number(screen.text());
         if (lastOperation === "plus") {
-            screen.text(Number((memory + data2).toPrecision(6)));
+            screen.text(Number((memory + data2).toPrecision(3)));
         } else if (lastOperation === "minus") {
-            screen.text(Number((memory - data2).toPrecision(6)));
+            screen.text(Number((memory - data2).toPrecision(3)));
         } else if (lastOperation === "divide") {
-            screen.text(Number((memory / data2).toPrecision(6)));
+            screen.text(Number((memory / data2).toPrecision(3)));
         } else if (lastOperation === "multiply") {
-            screen.text(Number((memory * data2).toPrecision(6)));
+            if (String(memory * data2).length < 15) {
+                screen.text(Number((memory * data2).toPrecision(3)));
+            } else {
+                screen.text("Error");
+            }
         }
         lastOperation = "";
     });
