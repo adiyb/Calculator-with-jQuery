@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap");
+* {
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
 }
-body{
+body {
     user-select: none;
     height: 100vh;
     display: flex;
@@ -16,38 +16,49 @@ body{
     background-size: cover;
     font-family: Barlow Condensed;
 }
-#wrapper{
+#wrapper {
     width: 80%;
     max-width: 400px;
     border-radius: 10px;
-    background-color: rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
-    border: 3px solid rgba(255,255,255,.1);
+    box-shadow: inset 4px 4px 10px rgb(187, 186, 186),
+        inset -4px -4px 10px rgb(63, 63, 63),
+        inset -2px -2px 20px black,
+        inset 2px 2px 20px white;
 }
-.calculator{
+.calculator {
     padding: 20px;
 }
-.screen{
+.screen {
     color: white;
-    font-size: 50px;
+    font-size: 30px;
     padding: 0 15px;
     direction: rtl;
     margin-bottom: 20px;
 }
 
-.calc-body{
+.calc-body {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(5,50px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 50px);
     gap: 20px;
 }
-.calc-body div{
+.calc-body div {
     text-align: center;
     font-size: 35px;
     font-weight: bold;
     color: white;
-    transition: font .1s;
+    transition: box-shadow 0.3s;
+    box-shadow: inset 1px 1px 10px rgb(180, 178, 178),inset -1px -1px 10px rgb(48, 47, 47);
+    border-radius: 10px;
 }
-.calc-body div:hover{
-    font-size: 40px;
+.calc-body div:hover {
+    box-shadow: inset 1px 1px 10px rgb(48, 47, 47),inset -1px -1px 10px rgb(180, 178, 178);
+}
+
+@media(min-width:500px){
+    .screen{
+        font-size: 50px;
+    }
 }
